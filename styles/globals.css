@@ -1,0 +1,26 @@
+body {
+  background: linear-gradient(red, blue, pink, black);
+}
+
+.card {
+  background: linear-gradient(135deg, orange 60%, cyan);
+}
+
+.btnBg {
+  background: linear-gradient(45deg, red, blue);
+}
+.txtColor {
+  color: beige;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.modalBg {
+  background: linear-gradient(#380036, #0cbaba);
+}
+.modalTxtColor {
+  color: beige;
+}
+
+
+
