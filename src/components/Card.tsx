@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
 import BalanceModal from "./BalanceModal";
 import Table from "./Table";
+import { toast } from "react-toastify";
 
 const Card = () => {
+  const walletConnectionSuccess = () => toast.success("Wallet Connected Successfully");
   const [currentWalletAddress, setCurrentWalletAddress] = useState("");
 
   //first checking window.etherium object is present or not that means metamask is installed or not in the browser
   const connectWallet = async () => {
     if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
       try {
-        //metamask is installed get all the accounts
+        //metamask is installed , get all the accounts
         const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+        //we just need first account
         setCurrentWalletAddress(accounts[0]);
+        walletConnectionSuccess();
       } catch (error) {
         console.log(error);
       }
@@ -20,7 +24,6 @@ const Card = () => {
       console.log("Please install metamask");
     }
   };
-  console.log(currentWalletAddress);
 
   useEffect(() => {
     const getCurrentlyConnectedWalletAddress = async () => {
@@ -59,7 +62,7 @@ const Card = () => {
   });
 
   return (
-    <div className="card py-4 border-0">
+    <div className="card custom_card py-4 border-0">
       {currentWalletAddress ? (
         <div className="d-flex m-0 align-items-center justify-content-end gap-1 px-3">
           <div className="p-2  blinkChild rounded-circle" style={{ backgroundColor: "green" }}></div>
@@ -80,17 +83,17 @@ const Card = () => {
         <>
           <h2 className="text-center py-4 ">Connect your wallet and check details </h2>
           <div className="d-flex justify-content-center">
-            <button onClick={connectWallet} className="col-2  border-0  py-2 btn btnBg" type="button" style={{ width: "180px" }}>
-              <span className="txtColor"> Connect Wallet</span>
+            <button onClick={connectWallet} className="col-2  rounded-1 py-2 btn custom_button" type="button">
+              <span className="txtColor">Connect Wallet</span>
             </button>
           </div>
         </>
       )}
-      <div className="card-body ">
-        <div className="row mt-5">
+      <div className="card-body  ">
+        <div className="row  mt-5">
           <div className="row mx-0 ">
             <div className="col-12 col-sm-8 px-0 col-md-9 mb-3  ">
-              <input type="string" placeholder="Enter Your wallet address " className="form-control w-100 py-3  " id="exampleInputEmail1" aria-describedby="emailHelp" />
+              <input type="string" placeholder="Enter Your wallet address " className="form-control w-100 py-3 input_bg border-0  " id="exampleInputEmail1" aria-describedby="emailHelp" />
             </div>
             <div className="px-sm-0 col-12 col-sm-4 px-0  col-md-3 ">
               <BalanceModal />
@@ -102,6 +105,7 @@ const Card = () => {
               <span className="txtColor"> Get Latest Transaction Details</span>
             </button>
           </div>
+
           <Table />
         </div>
       </div>

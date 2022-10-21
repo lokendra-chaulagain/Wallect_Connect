@@ -1,0 +1,60 @@
+body {
+  background-color: #4d246f !important;
+  color: #303958 !important;
+  overflow-x: hidden;
+}
+
+.custom_card {
+  background-color: #303958 !important;
+}
+
+.custom_button {
+  background-color: #373f5c !important;
+  border: 1px solid #8c5ca4 !important;
+  color: #b9b9d8 !important;
+}
+.custom_button:hover {
+  background-color: #8c5ca4 !important;
+}
+
+.input_bg {
+  background-color: #525664 !important;
+  color: #b9b9d8 !important;
+}
+
+.txtColor {
+  color: #b9b9d8;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.modalBg {
+  background: linear-gradient(#380036, #0cbaba);
+}
+.modalTxtColor {
+  color: #b9b9d8;
+}
+
+.blinkChild {
+  animation: blink 1s linear infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.07rem #8c5ca4 !important;
+}
+
+
+.text_color{
+  color: #b9b9d8 !important;
+}

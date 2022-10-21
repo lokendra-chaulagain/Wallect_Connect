@@ -3,7 +3,7 @@ import React from "react";
 const Table = () => {
   return (
     <div>
-      <table className="table">
+      <table className="table text_color">
         <thead>
           <tr>
             <th scope="col">#</th>

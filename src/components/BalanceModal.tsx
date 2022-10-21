@@ -3,7 +3,7 @@ import React from "react";
 const BalanceModal = () => {
   return (
     <div>
-      <button type="button" className="btn  btnBg w-100 py-3 mx-0 px-0 border-0 " style={{ color: "#F5F5DC", fontSize: "18px", fontWeight: "500" }} data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" className="btn  custom_button w-100 py-3 mx-0 px-0 border-1 rounded-1 " data-bs-toggle="modal" data-bs-target="#exampleModal">
         Check Balance
       </button>
 
