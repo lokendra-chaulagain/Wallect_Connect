@@ -48,3 +48,17 @@
   width: 100% !important;
   outline: none;
 }
+
+.toast_message_success {
+  background: #141a2a !important;
+  color: #afafd7;
+  font-size: 19px;
+  width: 34vw;
+  padding: 30px 20px;
+}
+
+
+.custom_alert{
+  background-color:  rgb(54, 54, 29) !important;
+  color: #afafd7 !important;
+}
